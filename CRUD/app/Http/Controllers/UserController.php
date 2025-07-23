@@ -33,11 +33,10 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
         //dd($request->all()); aqui deve ser implementado o codigo para salvar o medico no banco de dados
-
-
+        
         try {
 
-
+            //nomes que estão no bamco de dados 
             User::create([
                 'name' => $request->name,
                 'email' => $request->email,

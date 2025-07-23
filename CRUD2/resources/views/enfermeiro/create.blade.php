@@ -63,27 +63,30 @@
 
 <body>
 
-    <form action="{{ route('med.ler')}}" method="POST">
+    <form action="{{ route('enfermeiro.ler')}}" method="POST">
         @csrf
-        <h1>Cadastrar Médico</h1>
+        <h1>Cadastrar Enfermeiro</h1>
 
-        <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" placeholder="Nome completo" value="{{ old('name') }}" required>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Nome completo" required>
 
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" placeholder="Email do médico" value="{{ old('email') }}" required>
+        <input type="email" id="email" name="email" placeholder="Email do enfermeiro" required>
 
-        <label for="crm">CRM:</label>
-        <input type="text" id="crm" name="crm" placeholder="CRM do médico" value="{{ old('crm') }}" required>
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" placeholder="cpf do enfermeiro" required>
 
-        <label for="specialty">Especialidade:</label>
-        <input type="text" id="specialty" name="specialty" placeholder="Especialidade do médico" value="{{ old('specialty') }}" required>
+        <label for="rg">RG:</label>
+        <input type="text" id="rg" name="rg" placeholder="rg do enfermeiro" required>
+
+        <label for="coren">COREN:</label>
+        <input type="text" id="coren" name="coren" placeholder="coren do enfermeiro" required>
 
         <button type="submit">Cadastrar</button>
-        <a href="{{ route('med.listar') }}" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; text-align: center;">
-            Ver lista de médicos
+        <a href="{{ route('enfermeiro.listar') }}" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; text-align: center;">
+            Ver lista de enfermeiros
         </a>
-        
+
 
     </form>
 

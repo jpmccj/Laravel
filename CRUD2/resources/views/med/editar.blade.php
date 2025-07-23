@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar</title>
+    <title>Editar Médico</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -46,7 +44,7 @@
 
         button {
             width: 100%;
-            background-color: #28a745;
+            background-color: #ffc107;
             color: white;
             border: none;
             padding: 12px;
@@ -56,38 +54,50 @@
         }
 
         button:hover {
-            background-color: #218838;
+            background-color: #e0a800;
         }
+
+        .back-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .back-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
-
 <body>
 
-    <form action="{{ route('med.ler')}}" method="POST">
+    <form action="{{ route('med.atualizar', $medico->id) }}" method="POST">
         @csrf
-        <h1>Cadastrar Médico</h1>
+        @method('PUT')
+        <h1>Editar Médico</h1>
 
-        <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" placeholder="Nome completo" value="{{ old('name') }}" required>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="{{ old('nome', $medico->nome) }}" required>
 
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" placeholder="Email do médico" value="{{ old('email') }}" required>
+        <input type="email" id="email" name="email" value="{{ old('email', $medico->email) }}" required>
 
         <label for="crm">CRM:</label>
-        <input type="text" id="crm" name="crm" placeholder="CRM do médico" value="{{ old('crm') }}" required>
+        <input type="text" id="crm" name="crm" value="{{ old('crm', $medico->crm) }}" required>
 
         <label for="specialty">Especialidade:</label>
-        <input type="text" id="specialty" name="specialty" placeholder="Especialidade do médico" value="{{ old('specialty') }}" required>
+        <input type="text" id="specialty" name="specialty" value="{{ old('specialty', $medico->specialty) }}" required>
 
-        <button type="submit">Cadastrar</button>
-        <a href="{{ route('med.listar') }}" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; text-align: center;">
-            Ver lista de médicos
-        </a>
-        
+        <button type="submit">Salvar Alterações</button>
 
+        <div class="back-link">
+            <a href="{{ route('med.listar') }}">← Cancelar e voltar</a>
+        </div>
     </form>
 
-
 </body>
-
 </html>

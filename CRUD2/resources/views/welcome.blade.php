@@ -66,15 +66,24 @@
             background: linear-gradient(90deg, #1e7e34 60%, #4fd67b 100%);
             transform: translateY(-2px) scale(1.03);
         }
+        .btn-enfermeiro {
+            background: linear-gradient(90deg, #a79f28ff 60%, #e4d17bff 100%);
+            color: #fff;
+        }
+        .btn-enfermeiro:hover {
+            background: linear-gradient(90deg, #7e781eff 60%, #d6cd4fff 100%);
+            transform: translateY(-2px) scale(1.03);
+        }
     </style>
 </head>
 <body>
-    <div class="box">
+    <div class="box"> 
         <h1>Gerenciamento</h1>
-        <p>Bem-vindo! Escolha uma opção para começar:</p>
+        <p>Bem-vindo! Escolha uma opção para Cadastro:</p>
         <div class="btn-group">
             <a href="{{ route('med.create') }}" class="btn btn-medico">Cadastrar novo Médico</a>
             <a href="{{ route('paci.create') }}" class="btn btn-paciente">Cadastrar novo Paciente</a>
+            <a href="{{ route('enfermeiro.create')}}" class="btn btn-enfermeiro">Cadastrar novo Enfermeiro</a>
         </div>
     </div>
 </body>
